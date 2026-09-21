@@ -59,13 +59,9 @@ export const Chat = () => {
     return () => document.removeEventListener('mousemove', followCursor)
   }, [isOpenContextModal])
 
-  const [item, setItem] = useState(false)
-
   return <>
     <div className="min-h-screen" onMouseDown={closeContextModal} onContextMenu={openContextModal}>
 
-      <button onClick={() => setItem(!item)}>asads</button>
-      {item && <div>item show</div>}
 
       {
         isOpenContextModal && <ContextMenu items={chatContextMenu} position={cursorPosition}/>

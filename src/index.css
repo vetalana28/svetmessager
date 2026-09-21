@@ -4,3 +4,34 @@
     box-sizing: border-box;
     text-decoration: none;
 }
+
+.min-h-screen {
+    min-height: 100vh;
+}
+
+:root {
+    --blue: #3F77E8;
+    --primary-gradient: linear-gradient(-75deg, #7DC0FD, #5768FD);
+    --white: #ffffff;
+    --light-blue: #92B3F0;
+    --red-gradient: linear-gradient(-68deg, #FF7948 16.58%, #FF1271 70.61%);
+    --white-stroke: linear-gradient(
+            -82deg,
+            #FFFFFF 0%,
+            rgba(255, 255, 255, 0.51) 48%,
+            #FFFFFF 100%
+    );
+}
+
+body {
+    background: url("./assets/images/main-bg.png") center center no-repeat;
+    background-size: cover;
+    min-height: 100vh;
+}
+
+.glass {
+    width: 900px;
+    background: var(--white-stroke);
+    backdrop-filter: blur(12.6px);
+    border-radius: 16px;
+}
