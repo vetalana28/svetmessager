@@ -15,17 +15,22 @@ export const Chat = () => {
 
   const chatContextMenu: ContextMenuItem[] = [
     {
-      icon: "trash.svg",
-      text: "Удалить сообщение",
-      onClick: () => {
-        console.log("deleted")
-      }
-    },
-    {
-      icon: "edit.svg",
+      type: "item",
+      icon: "edit",
       text: "Редачить",
       onClick: () => {
         console.log("edited")
+      }
+    },
+    {
+      type: "separator"
+    },
+    {
+      type: "item",
+      icon: "trash",
+      text: "Удалить сообщение",
+      onClick: () => {
+        console.log("deleted")
       }
     }
   ]

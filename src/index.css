@@ -21,6 +21,12 @@
             rgba(255, 255, 255, 0.51) 48%,
             #FFFFFF 100%
     );
+    --white-stroke-hover: linear-gradient(
+            -82deg,
+            #f3f3f3 0%,
+            rgba(250, 250, 250, 0.51) 48%,
+            #f3f3f3 100%
+    );
 }
 
 body {

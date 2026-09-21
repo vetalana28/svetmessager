@@ -3,8 +3,40 @@
 .context-menu {
     border: 1px solid white;
     background-color: rgba(255, 255, 255, 0.64);
+    border-radius: 8px;
+    padding: 5px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+
 }
 
 .context-menu__button {
-    
+    background: var(--white-stroke);
+    border-radius: 8px;
+    cursor: pointer;
+    width: 227px;
+    height: 30px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    padding-left: 10px;
+    gap: 5px;
+
+    img {
+        width: 15px;
+        height: 15px;
+    }
+
+    &:hover {
+        background: var(--white-stroke-hover);
+    }
+}
+
+.context-menu__separator {
+    display: block;
+    height: 1px;
+    width: 100%;
+    background: var(--white-stroke);
 }
