@@ -14,7 +14,7 @@ export  const Header  = () => {
                 <Link className="header-link" to="#">Моя страница</Link>
                 <Link className="header-link" to="#">Чат</Link>
             </nav>
-            <a href="" className="header__button">Войти</a>
+            <Link to="/register" className="header__button">Войти</Link>
         </div>
     </header>
 }
