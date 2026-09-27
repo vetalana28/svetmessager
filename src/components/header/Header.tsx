@@ -2,21 +2,19 @@
 import "./header.css"
 import {Link} from "react-router-dom";
 
+
 export  const Header  = () => {
     return <header>
-
         <div className="header__container container">
-
-            <img src="../src/assets/react.svg" alt="Logo"/>
+            <a href="" className="header__logo">VetMessager</a>
 
             <nav className="header__nav">
-                <Link className="header-link active" to="/">Home</Link>
-                <Link className="header-link" to="/features">Features</Link>
-                <Link className="header-link" to="#">Pricing</Link>
-                <Link className="header-link" to="#">Blog</Link>
+                <Link className="header-link active" to="/">Главная</Link>
+                <Link className="header-link" to="/features">Лента</Link>
+                <Link className="header-link" to="#">Моя страница</Link>
+                <Link className="header-link" to="#">Чат</Link>
             </nav>
-
-            <a className="header__btn">Get started</a>
+            <a href="" className="header__button">Войти</a>
         </div>
     </header>
 }

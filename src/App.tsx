@@ -4,17 +4,19 @@ import {Features} from "./pages/Features/Features.tsx";
 import {Routes, Route} from "react-router-dom"
 import {Header} from "./components/header/Header.tsx";
 
+
+
 export const App = () => {
+    return (
+        <div>
+            <Header/>
 
-    return <div>
+            <Routes>
+                <Route path="/" element={<Home/>}/>
+                <Route path="/features" element={<Features/>}/>
+            </Routes>
 
-        <Header/>
 
-        <Routes>
-            <Route path="/" element={<Home/>}/>
-            <Route path="/features" element={<Features/>}/>
-        </Routes>
-
-    </div>
+        </div>
+    );
 }
-
