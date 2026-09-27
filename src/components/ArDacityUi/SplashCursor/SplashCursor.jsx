@@ -1,7 +1,7 @@
 'use client';
 import { useEffect, useRef } from 'react';
 
- function SplashCursor({
+function SplashCursor({
   // Add whatever props you like for customization
   SIM_RESOLUTION = 128,
   DYE_RESOLUTION = 1440,
