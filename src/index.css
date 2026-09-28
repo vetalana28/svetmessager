@@ -1,3 +1,4 @@
+
 @font-face {
     font-family: 'Onest';
     src: url(./fonts/Onest-VariableFont_wght.ttf);
@@ -11,6 +12,12 @@
     list-style: none;
     font-family: 'Onest';
     font-size: 18px;
+
+}
+
+input, button, textarea {
+    outline: none;
+    border: none;
 }
 
 :root {
@@ -33,6 +40,21 @@
     --RedGradient: linear-gradient(80deg, #FF7948, #FF1271);
 
 }
+
+body {
+    background-image: url(assets/images/main.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    min-height: 100vh;
+
+}
+body.auth
+{
+    background-image: url(assets/images/form-fon.png);
+}
+
 
 .container {
     max-width: 1200px;

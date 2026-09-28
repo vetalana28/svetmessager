@@ -1,0 +1,121 @@
+.form-fon
+{
+background-image: url("../../assets/images/form-fon.png");
+    min-height: 100vh;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.center {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form__container {
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+
+
+    background-image: var(--GlassBtn);
+    padding: 0px 30px 40px;
+    margin: 50px 0;
+    border: 1px solid white;
+    box-shadow: 0px 0px 17.7px rgba(134, 127, 127, 0.07), inset 0px 2px 3.3px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 64px;
+
+    p {
+        margin-top: 25px;
+        font-size: 7px;
+    }
+}
+
+.form__text {
+    display: inline-block;
+    background: var(--RegButton);
+
+
+    background-clip: text;
+    color: transparent;
+
+    h2 {
+        font-size: 32px;
+
+        margin: 40px 0 15px 0;
+        font-weight: 400;
+    }
+
+    h3 {
+        font-size: 20px;
+        margin: 0 0 45px 0;
+        font-weight: 400;
+    }
+}
+
+.reg__button
+{
+    background: var(--GlassBtn);
+    padding: 14px 30px;
+    margin-bottom: 16px;
+    border: 1px solid rgb(63 119 232);
+    box-shadow: 0px 0px 17.7px rgba(134, 127, 127, 0.07), inset 0px 2px 3.3px rgba(255, 255, 255, 0.25);
+    backdrop-filter: blur(5px);
+    border-radius: 64px;
+}
+
+form > div {
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+
+    input {
+        background-color: transparent;
+        background-image: var(--GlassBtn);
+        padding: 14px 30px;
+        margin-bottom: 16px;
+        border: 1px solid rgb(63 119 232);
+        box-shadow: 0px 0px 17.7px rgba(134, 127, 127, 0.07), inset 0px 2px 3.3px rgba(255, 255, 255, 0.25);
+        backdrop-filter: blur(5px);
+        border-radius: 64px;
+
+        color: var(--Blue);
+    }
+
+    ::placeholder {
+        color: var(--Blue);
+        opacity: 0.7;
+        font-size: 16px;
+    }
+}
+
+form > button {
+    width: 100%;
+    min-height: 50px;
+    margin-top: 10px;
+
+    transition: 0.1s;
+
+    &:hover {
+        transform: scale(1.02);
+        transition: 0.6s;
+    }
+}
+
+.form__container a
+{
+    width: 100%;
+    text-align: right;
+    padding-top: 20px;
+
+    background: var(--RegButton);
+    background-clip: text;
+    color: transparent;
+}
+
