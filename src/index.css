@@ -42,18 +42,17 @@ input, button, textarea {
 }
 
 body {
-    background-image: url(../../assets/images/main.png);
+    background-image: url(assets/images/main.png);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
 
     min-height: 100vh;
 
-
 }
 body.auth
 {
-    background-image: url(../../assets/images/form-fon.png);
+    background-image: url(assets/images/form-fon.png);
 }
 
 

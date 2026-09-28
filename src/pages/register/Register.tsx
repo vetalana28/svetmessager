@@ -1,7 +1,8 @@
 import "./register.css"
-import {type ChangeEvent, type FormEvent, useState} from "react";
+import {type ChangeEvent, type FormEvent, useState, useEffect} from "react";
 import {$api} from "../../utils/api.ts";
 import axios from "axios";
+import {Link} from "react-router-dom";
 
 type RegisterForm = {
     email: string,
@@ -52,19 +53,24 @@ export const Register = () => {
 
     useEffect(() => {
         document.body.className = "auth"
-        return () => {document.body.className=""}
-    },[])
+        return () => {
+            document.body.className = ""
+        }
+    }, [])
 
     return (
-
         <div className={"center container"}>
             <div className="form__container ">
                 <div className="form__text">
-                <h2>VetMessager</h2>
-                <h3>Мы не отвечаем за слив ваших данных</h3></div>
+                    <h2>VetMessager</h2>
+                    <h3>Регистрация</h3>
+                </div>
+
+
                 <form onSubmit={handleSubmit}>
-                    <div >
-                        <input  onChange={handleChange} value={registerData.email} name={"email"} type="text"
+                    <div>
+
+                        <input onChange={handleChange} value={registerData.email} name={"email"} type="text"
                                placeholder={"Введите никнейм"}/>
                         <input onChange={handleChange} value={registerData.first_name} name={"first_name"} type="text"
                                placeholder={"Введите электронную почту"}/>
@@ -81,7 +87,10 @@ export const Register = () => {
                     <button className={"header__button"} type={"submit"}>Продолжить</button>
                 </form>
 
-                <p className="form__text">Нажимая продолжить, вы даете соглашение на отправку всех ваших данных в базу данных России</p>
+
+                <p className="form__text">Нажимая продолжить, вы даете соглашение на отправку всех ваших данных в базу
+                    данных России</p>
+                <Link to="/login">Уже есть аккаунт?</Link>
             </div>
         </div>
     )
