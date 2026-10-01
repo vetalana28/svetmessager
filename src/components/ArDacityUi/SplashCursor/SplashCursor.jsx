@@ -265,6 +265,7 @@ function SplashCursor({
             vT = vUv + vec2(0.0, texelSize.y);
             vB = vUv - vec2(0.0, texelSize.y);
             gl_Position = vec4(aPosition, 0.0, 1.0);
+           
         }
       `
     );
@@ -335,7 +336,11 @@ function SplashCursor({
           #endif
 
           float a = max(c.r, max(c.g, c.b));
-          gl_FragColor = vec4(c, a);
+          #ifdef TRANSPARENT
+              gl_FragColor = vec4(c, a);
+          #else
+              gl_FragColor = vec4(c, 1.0);
+          #endif
       }
     `;
 
@@ -395,6 +400,7 @@ function SplashCursor({
                 vec2 coord = vUv - dt * texture2D(uVelocity, vUv).xy * texelSize;
                 vec4 result = texture2D(uSource, coord);
             #endif
+            
             float decay = 1.0 + dissipation * dt;
             gl_FragColor = result / decay;
         }
@@ -758,6 +764,7 @@ function SplashCursor({
     function updateKeywords() {
       let displayKeywords = [];
       if (config.SHADING) displayKeywords.push('SHADING');
+      if (config.TRANSPARENT) displayKeywords.push('TRANSPARENT');   // <-- ДОБАВИТЬ
       displayMaterial.setKeywords(displayKeywords);
     }
 
@@ -1031,7 +1038,9 @@ function SplashCursor({
       c.r *= 0.15;
       c.g *= 0.15;
       c.b *= 0.15;
-      return c;
+      // return c;
+      // return { r: 0., g: 0.792, b: 1.0 };
+      // return { r: 0.0247, g: 0.0467, b: 0.0910 };
     }
 
     function HSVtoRGB(h, s, v) {
@@ -1199,9 +1208,28 @@ function SplashCursor({
   ]);
 
   return (
-    <div className="fixed top-0 left-0 z-50 pointer-events-none w-full h-full">
-      <canvas ref={canvasRef} id="fluid" className="w-screen h-screen block"></canvas>
-    </div>
+      <div
+          style={{
+            position: 'fixed',
+            top: 0,
+            left: 0,
+            width: '100%',
+            height: '100%',
+            zIndex: 50,
+            pointerEvents: 'none',
+            background: 'transparent',
+          }}
+      >
+        <canvas
+            ref={canvasRef}
+            id="fluid"
+            style={{
+              display: 'block',
+              width: '100vw',
+              height: '100vh',
+            }}
+        />
+      </div>
   );
 }
 
